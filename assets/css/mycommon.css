@@ -1,0 +1,19 @@
+body{
+  min-width: 1200px;
+}
+li{
+  list-style: none;
+}
+ul{
+  margin: 0;
+  padding: 0;
+}
+.container{
+  min-width: 1200px;
+  width: 1200px;
+  margin: 0 auto;
+}
+.title{
+  padding: 81px 30px;
+  font-size: 36px;
+}
