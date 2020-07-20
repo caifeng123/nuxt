@@ -1,7 +1,7 @@
 <!--
  * @Author: cc123nice
  * @Date: 2020-07-05 14:24:17
- * @LastEditTime: 2020-07-13 17:07:18
+ * @LastEditTime: 2020-07-15 10:09:33
  * @Description: my progamme description
  * @FilePath: \nuxt\components\common\nav.vue
 --> 
@@ -36,14 +36,10 @@
           <li data-id="qa">常见问题</li>
         </ul>
       </li>
-      <li class="head-recruit" @click="navigate('/recruit',$event)" data-id="head">
+      <li class="head-recruit" @click="navigate('/jobs',$event)" data-id="head">
         招聘职位
         <ul class="select">
-          <li data-id="introduction">公司简介</li>
-          <li data-id="history">发展历程</li>
-          <li data-id="production">产品与服务</li>
-          <li data-id="honor">企业荣誉</li>
-          <li data-id="story">员工故事</li>
+          <li data-id="jobs">招聘职位</li>
         </ul>
       </li>
     </ul>

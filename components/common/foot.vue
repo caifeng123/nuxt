@@ -1,13 +1,13 @@
 <!--
  * @Author: cc123nice
  * @Date: 2020-07-03 11:25:23
- * @LastEditTime: 2020-07-08 16:48:56
+ * @LastEditTime: 2020-07-15 13:47:32
  * @Description: my progamme description
  * @FilePath: \nuxt\components\common\foot.vue
 --> 
 <template>
   <div class="foot">
-    <Title :titleinfo="titleinfo" style="margin:0"/>
+    <Title :titleinfo="titleinfo" style="margin:0;padding:0"/>
     <div class="container">
       <div class="foot-mid">
         <div class="foot-mid-left">

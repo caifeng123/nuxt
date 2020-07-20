@@ -1,9 +1,9 @@
 /*
  * @Author: cc123nice
  * @Date: 2020-07-02 14:59:12
- * @LastEditTime: 2020-07-10 11:53:20
+ * @LastEditTime: 2020-07-16 14:37:07
  * @Description: my progamme description
- * @FilePath: \nuxt\nuxt.config.js
+ * @FilePath: \上线快\nuxt-\nuxt.config.js
  */
 
 export default {
@@ -11,7 +11,7 @@ export default {
   ** Nuxt rendering mode
   ** See https://nuxtjs.org/api/configuration-mode
   */
-  mode: 'spa',
+  mode: 'ssr',
   /*
   ** Nuxt target
   ** See https://nuxtjs.org/api/configuration-target
@@ -50,8 +50,8 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
-    '@/plugins/antd-ui',
-    { src: "~/plugins/vue-awesome-swiper.js", ssr: false }
+    { src: "~/plugins/vue-awesome-swiper.js", ssr: false },
+    { src: '~plugins/iview', ssr: true }
   ],
   /*
   ** Auto import components
@@ -66,12 +66,35 @@ export default {
   /*
   ** Nuxt.js modules
   */
+  // modules: [
+  //   '@nuxtjs/axios',
+  //   '@nuxtjs/proxy'
+  // ],
+  // proxy:[
+  //   ['/app',{target:'http://localhost:4000'}]
+  // ],
   modules: [
+    '@nuxtjs/axios',
   ],
+  axios: {
+    proxy: true,
+    prefix: '/api', // baseURL
+    credentials: true,
+  },
+  proxy: {
+    '/api': {
+      target: 'http://localhost:4000', // 代理地址
+      changeOrigin: true,
+      pathRewrite: {
+        '^/api': '', //将 /api 替换掉
+      },
+    },
+  },
   /*
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
+    vendor:['axios']
   }
 }

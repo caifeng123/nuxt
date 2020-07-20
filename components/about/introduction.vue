@@ -1,43 +1,39 @@
 <!--
  * @Author: cc123nice
  * @Date: 2020-07-05 21:29:57
- * @LastEditTime: 2020-07-13 14:19:12
+ * @LastEditTime: 2020-07-16 15:56:36
  * @Description: my progamme description
- * @FilePath: \nuxt\components\about\introduction.vue
+ * @FilePath: \上线快\nuxt-\components\about\introduction.vue
 --> 
 <template>
-  <div id ="introduction">
-    <Title :titleinfo="titleinfo"/>
+  <div id="introduction">
+    <Title :titleinfo="titleinfo" />
     <div>
       <div class="leftimg">
         <img src="~/static/imgs/about/introduction/1.jpg" alt />
       </div>
       <div class="rightinfo">
-        <p>前程无忧</p>
-        <article>
-          “前程无忧”(Nasdaq:JOBS)是国内一个集多种媒介资源优势的专业人力资源服务机构，创始人为甄荣辉。它集合了传统媒体、网络媒体及先进的信息技术，加上一支经验丰富的专业顾问队伍，提供包括招聘猎头、培训测评和人事外包在内的全方位专业人力资源服务，现在全国25个城市设有服务机构。2004年9月，前程无忧成为第一个在美国纳斯达克上市的中国人力资源服务企业，是中国最具影响力的人力资源服务供应商之一。
-          前程无忧成立于1998年，是一家网络招聘服务提供商，网站目标有两大部分：致力于为积极进取的白领阶层和专业人士提供更好的职业发展机会。同时，网站致力于为企业搜寻、招募到最优秀的人才。
-          提供报纸招聘、网络招聘、招聘猎头、培训测评和人事外包在内的人力资源服务，最初全国包括香港在内的26个城市设有服务机构，至今已经增加至104个城市。
-        </article>
+        <p>{{company.companyName}}</p>
+        <article>{{company.companyInfo}}</article>
         <button>公司官网</button>
       </div>
     </div>
     <div class="numbers">
       <span>
         <span>公司成立于</span>
-        <span class="high-light">1998</span>
+        <span class="high-light">{{company.createTime}}</span>
       </span>
       <span>
         <span>美国纳斯达克上市</span>
-        <span class="high-light">2004.09</span>
+        <span class="high-light">{{company.companyNum}}</span>
       </span>
       <span>
         <span>全国城市设有服务机构</span>
-        <span class="high-light">25个</span>
+        <span class="high-light"></span>
       </span>
       <span>
         <span>业务遍布全国</span>
-        <span class="high-light">104个城市</span>
+        <span class="high-light">{{company.city}}</span>
       </span>
     </div>
   </div>
@@ -47,6 +43,9 @@
 import Title from "../common/title";
 
 export default {
+  props: {
+    company: Object
+  },
   data() {
     return {
       titleinfo: {
@@ -56,10 +55,9 @@ export default {
       }
     };
   },
-  components:{
+  components: {
     Title
   }
-  
 };
 </script>
 
